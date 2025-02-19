@@ -1,0 +1,176 @@
+ise@ARYA18 MINGW64 ~/Desktop/lab068
+$ git config --global --unset user.name "Manish-Code-7"
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068
+$ git config --global --unset user.email "mmaddikeri04@gmail.com"
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068
+$ git init
+Initialized empty Git repository in C:/Users/ise/Desktop/lab068/.git/
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git config --global user.email "mmaddikeri04@gmail.com"
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git config --global user.name "Manish-Code-7"
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ touch p1.txt
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ touch p2.txt
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        p1.txt
+        p2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ touch index.html
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+        p1.txt
+        p2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git add .
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+        new file:   p1.txt
+        new file:   p2.txt
+
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git commit -m "my first lab commit"
+[master (root-commit) 0714fff] my first lab commit
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+ create mode 100644 p1.txt
+ create mode 100644 p2.txt
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git log
+commit 0714fff1ae1ccd4047f42c38dc5ed4dcb026bd9a (HEAD -> master)
+Author: Manish-Code-7 <mmaddikeri04@gmail.com>
+Date:   Wed Feb 19 10:14:21 2025 +0530
+
+    my first lab commit
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git log --oneline
+0714fff (HEAD -> master) my first lab commit
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git remote add origin https://github.com/Manish-Code-7/lab1.git
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 238 bytes | 119.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Manish-Code-7/lab1.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   p1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git add .
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   p1.txt
+
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git commit -m "my second lab commit"
+[master bc8c8ff] my second lab commit
+ 1 file changed, 1 insertion(+)
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git log
+commit bc8c8ff65125d0807396fddf07e204b3d372a95b (HEAD -> master)
+Author: Manish-Code-7 <mmaddikeri04@gmail.com>
+Date:   Wed Feb 19 10:20:12 2025 +0530
+
+    my second lab commit
+
+commit 0714fff1ae1ccd4047f42c38dc5ed4dcb026bd9a (origin/master)
+Author: Manish-Code-7 <mmaddikeri04@gmail.com>
+Date:   Wed Feb 19 10:14:21 2025 +0530
+
+    my first lab commit
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git log --oneline
+bc8c8ff (HEAD -> master) my second lab commit
+0714fff (origin/master) my first lab commit
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git remote add origin https://github.com/Manish-Code-7/lab1.git
+error: remote origin already exists.
+
+ise@ARYA18 MINGW64 ~/Desktop/lab068 (master)
+$ git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 332 bytes | 332.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Manish-Code-7/lab1.git
+   0714fff..bc8c8ff  master -> master
+branch 'master' set up to track 'origin/master'.
